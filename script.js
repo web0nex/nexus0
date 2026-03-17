@@ -1,32 +1,201 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // --- NAVEGACIÓN SUAVE EXACTA (SMOOTH SCROLL) ---
+
+    // --- NAVEGACIÓN SUAVE CON OFFSET AJUSTABLE ---
     const scrollLinks = document.querySelectorAll('.scroll-link');
     
+    function smoothScrollTo(targetId) {
+        const targetElement = document.querySelector(targetId);
+        if (!targetElement) return;
+        
+        let offsetPC = 140;    
+        let offsetMovil = 120; 
+
+        if (targetId === '#proyectos') {
+            offsetPC = -15;    
+            offsetMovil = -15; 
+        } 
+        else if (targetId === '#casos-exito') {
+            offsetPC = -185;    
+            offsetMovil = 0; 
+        } 
+        else if (targetId === '#proceso') {
+            offsetPC = 60;     
+            offsetMovil = 60;  
+        }
+
+        const headerOffset = window.innerWidth <= 768 ? offsetMovil : offsetPC; 
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+    }
+
     scrollLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetId === '#proyectos') {
-                const headerOffset = -20; 
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            } else if (targetId === '#casos-exito') {
-                const headerOffset = -60; 
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            } else if (targetId === '#proceso') {
-                const headerOffset = 60; 
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }
+            smoothScrollTo(targetId);
         });
     });
+
+
+    // --- LÓGICA DEL CARRUSEL INFINITO PERFECTO (SIN SALTOS VISIBLES) ---
+    const track = document.getElementById("carousel-track");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    if (track && prevBtn && nextBtn) {
+        const originalCards = Array.from(track.querySelectorAll(".testi-card"));
+        const cardCount = originalCards.length;
+
+        // 1. Clonar tarjetas
+        originalCards.forEach(card => {
+            let clone = card.cloneNode(true);
+            clone.classList.remove('active', 'focused');
+            track.appendChild(clone);
+        });
+        originalCards.forEach(card => {
+            let clone = card.cloneNode(true);
+            clone.classList.remove('active', 'focused');
+            track.appendChild(clone);
+        });
+
+        const allCards = Array.from(track.querySelectorAll(".testi-card"));
+        let currentIndex = cardCount; 
+        let isJumping = false;
+        let scrollTimeout;
+
+        function setFocusStrict(index) {
+            allCards.forEach((card, i) => {
+                if (i === index) {
+                    card.classList.add("focused");
+                } else {
+                    card.classList.remove("focused");
+                }
+            });
+        }
+
+        function updateFocusedCardByScroll() {
+            if (isJumping) return;
+            const trackCenter = track.getBoundingClientRect().left + track.offsetWidth / 2;
+            let closestDistance = Infinity;
+            let newIndex = currentIndex;
+
+            allCards.forEach((card, index) => {
+                const cardCenter = card.getBoundingClientRect().left + card.offsetWidth / 2;
+                const distance = Math.abs(trackCenter - cardCenter);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    newIndex = index;
+                }
+            });
+
+            if (currentIndex !== newIndex) {
+                currentIndex = newIndex;
+                setFocusStrict(currentIndex);
+            }
+        }
+
+        // Función de salto ninja mejorada (Apagamos TODO lo que pelea contra JS antes de saltar)
+        function jumpToMiddleIfNecessary() {
+            if (currentIndex < cardCount || currentIndex >= cardCount * 2) {
+                isJumping = true;
+                
+                // Desactivamos animaciones y comportamientos magnéticos
+                track.style.scrollBehavior = 'auto';
+                track.style.scrollSnapType = 'none';
+                allCards.forEach(c => c.style.transition = 'none');
+
+                // Calculamos el índice espejo en el set del medio
+                if (currentIndex < cardCount) {
+                    currentIndex += cardCount;
+                } else if (currentIndex >= cardCount * 2) {
+                    currentIndex -= cardCount;
+                }
+
+                const card = allCards[currentIndex];
+                track.scrollLeft = card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2);
+                setFocusStrict(currentIndex);
+
+                // Forzamos al navegador a aplicar el salto invisible YA MISMO
+                void track.offsetWidth; 
+
+                // Restauramos las animaciones
+                track.style.scrollBehavior = 'smooth';
+                track.style.scrollSnapType = 'x mandatory';
+                allCards.forEach(c => c.style.transition = '');
+                
+                setTimeout(() => { isJumping = false; }, 50);
+            }
+        }
+
+        nextBtn.addEventListener("click", () => {
+            if (isJumping) return;
+            if (currentIndex < allCards.length - 1) {
+                currentIndex++;
+                setFocusStrict(currentIndex); 
+                const card = allCards[currentIndex];
+                track.scrollTo({ left: card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2), behavior: 'smooth' });
+            }
+        });
+
+        prevBtn.addEventListener("click", () => {
+            if (isJumping) return;
+            if (currentIndex > 0) {
+                currentIndex--;
+                setFocusStrict(currentIndex); 
+                const card = allCards[currentIndex];
+                track.scrollTo({ left: card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2), behavior: 'smooth' });
+            }
+        });
+
+        track.addEventListener("scroll", () => {
+            window.requestAnimationFrame(updateFocusedCardByScroll);
+            clearTimeout(scrollTimeout);
+            // Reducimos el timeout para que el salto ocurra apenas dejes de deslizar
+            scrollTimeout = setTimeout(jumpToMiddleIfNecessary, 100);
+        });
+
+        window.addEventListener("resize", () => {
+            if(isJumping) return;
+            const card = allCards[currentIndex];
+            track.scrollLeft = card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2);
+        });
+
+        // Inicialización teletransportando al medio sin animaciones
+        setTimeout(() => {
+            isJumping = true;
+            track.style.scrollBehavior = 'auto';
+            track.style.scrollSnapType = 'none';
+            allCards.forEach(c => c.style.transition = 'none'); 
+            
+            const card = allCards[currentIndex];
+            track.scrollLeft = card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2);
+            setFocusStrict(currentIndex);
+            
+            void track.offsetWidth; 
+            track.style.scrollBehavior = 'smooth';
+            track.style.scrollSnapType = 'x mandatory';
+            allCards.forEach(c => c.style.transition = ''); 
+            setTimeout(() => { isJumping = false; }, 100);
+        }, 100); 
+    }
+
+
+    // --- SISTEMA DE NOTIFICACIONES (TOAST) ---
+    const toastContainer = document.getElementById("toast-container");
+
+    function mostrarNotificacion(mensaje, icono = "bx-info-circle") {
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `<i class='bx ${icono}'></i> <span>${mensaje}</span>`;
+        toastContainer.appendChild(toast);
+        setTimeout(() => toast.classList.add("show"), 10);
+        setTimeout(() => {
+            toast.classList.remove("show");
+            setTimeout(() => toast.remove(), 400);
+        }, 3000);
+    }
+
 
     // --- ANIMACIONES AL HACER SCROLL ---
     const reveals = document.querySelectorAll(".reveal");
@@ -44,7 +213,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     window.addEventListener("scroll", revealOnScroll);
     revealOnScroll(); 
-    
+
+
     // --- LÓGICA DEL MODAL Y FORMULARIO ---
     const modal = document.getElementById("modal");
     const btnCotizar1 = document.getElementById("btn-cotizar");
