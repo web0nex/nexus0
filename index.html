@@ -10,8 +10,11 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Nexus<span>Web</span></div>
-        <div class="nav-links">
+        <div class="navbar-top">
+            <div class="logo">Nexus<span>Web</span></div>
+        </div>
+        
+        <div class="nav-links" id="nav-links">
             <a href="#proyectos" class="scroll-link">Proyectos</a>
             <a href="#casos-exito" class="scroll-link">Reseñas</a>
             <a href="#proceso" class="scroll-link">Proceso</a>
@@ -77,57 +80,82 @@
         <h2>Casos de Éxito</h2>
         <p class="section-sub">Negocios que ya potenciaron sus ventas conmigo.</p>
         
-        <div class="testimonials-grid">
-            <div class="testi-card reveal">
-                <div class="testi-img">
-                    <img src="img/tienda.jpg" alt="Proyecto Gamer">
-                </div>
-                <div class="testi-body">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" id="prev-btn">
+                <i class='bx bx-chevron-left'></i>
+            </button>
+            <div class="testimonials-grid carousel-slide" id="carousel-track">
+                <div class="testi-card">
+                    <div class="testi-img">
+                        <img src="img/tienda.jpg" alt="Proyecto Gamer">
                     </div>
-                    <p class="quote">"Ezequiel entendió a la perfección lo que queríamos. La tienda carga rapidísimo, se ve increíble en el celular y nuestras ventas aumentaron un 30% en el primer mes. Un crack total."</p>
-                    <div class="client-profile">
-                        <h4>Gamer Group</h4>
-                        <span>Tienda de Insumos Tech</span>
+                    <div class="testi-body">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                        </div>
+                        <p class="quote">"Ezequiel entendió a la perfección lo que queríamos. La tienda carga rapidísimo, se ve increíble en el celular y nuestras ventas aumentaron un 30% en el primer mes. Un crack total."</p>
+                        <div class="client-profile">
+                            <h4>Gamer Group</h4>
+                            <span>Tienda de Insumos Tech</span>
+                        </div>
+                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                     </div>
-                    <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                 </div>
-            </div>
 
-            <div class="testi-card reveal" style="transition-delay: 0.2s;">
-                <div class="testi-img">
-                    <img src="img/panel.jpg" alt="Proyecto Trisquel">
-                </div>
-                <div class="testi-body">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                <div class="testi-card">
+                    <div class="testi-img">
+                        <img src="img/panel.jpg" alt="Proyecto Trisquel">
                     </div>
-                    <p class="quote">"Estábamos perdiendo clientes porque nuestra web vieja era un desastre. Nos renovó toda la imagen de marca y ahora transmitimos muchísima más confianza. Súper recomendable."</p>
-                    <div class="client-profile">
-                        <h4>Trisquel Joyas</h4>
-                        <span>Accesorios Premium</span>
+                    <div class="testi-body">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                        </div>
+                        <p class="quote">"Estábamos perdiendo clientes porque nuestra web vieja era un desastre. Nos renovó toda la imagen de marca y ahora transmitimos muchísima más confianza. Súper recomendable."</p>
+                        <div class="client-profile">
+                            <h4>Trisquel Joyas</h4>
+                            <span>Accesorios Premium</span>
+                        </div>
+                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                     </div>
-                    <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                 </div>
-            </div>
 
-            <div class="testi-card reveal" style="transition-delay: 0.4s;">
-                <div class="testi-img">
-                    <img src="img/tienda.jpg" alt="Proyecto Bodega">
+                <div class="testi-card">
+                    <div class="testi-img">
+                        <img src="img/tienda.jpg" alt="Proyecto Bodega">
+                    </div>
+                    <div class="testi-body">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+                        </div>
+                        <p class="quote">"La atención al detalle es destacable. Necesitábamos una landing page elegante para captar clientes para nuestros servicios y el resultado superó nuestras expectativas ampliamente."</p>
+                        <div class="client-profile">
+                            <h4>Bodega Galan</h4>
+                            <span>Servicios & Eventos</span>
+                        </div>
+                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
+                    </div>
                 </div>
-                <div class="testi-body">
-                    <div class="stars">
-                        <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
+
+                <div class="testi-card">
+                    <div class="testi-img">
+                        <img src="img/panel.jpg" alt="Proyecto Local de Ropa">
                     </div>
-                    <p class="quote">"La atención al detalle es destacable. Necesitábamos una landing page elegante para captar clientes para nuestros servicios y el resultado superó nuestras expectativas ampliamente."</p>
-                    <div class="client-profile">
-                        <h4>Bodega Galan</h4>
-                        <span>Servicios & Eventos</span>
+                    <div class="testi-body">
+                        <div class="stars">
+                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
+                        </div>
+                        <p class="quote">"Nos hizo una web súper intuitiva. Ahora los clientes pueden ver todo nuestro catálogo y comprar directo por WhatsApp sin que tengamos que estar todo el día respondiendo mensajes. ¡Una genia!"</p>
+                        <div class="client-profile">
+                            <h4>Urbano Style</h4>
+                            <span>Local de Ropa</span>
+                        </div>
+                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                     </div>
-                    <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
                 </div>
             </div>
+            <button class="carousel-btn next-btn" id="next-btn">
+                <i class='bx bx-chevron-right'></i>
+            </button>
         </div>
     </section>
 
