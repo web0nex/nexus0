@@ -152,11 +152,70 @@ footer { text-align: center; padding: 40px; color: var(--text-muted); font-size:
     .navbar { flex-direction: column; padding: 15px; gap: 15px; align-items: center;}
     .header-left { width: 100%; justify-content: space-between; }
     
-    /* Separar el título superior */
-    .hero { padding-top: 40px; margin-bottom: 30px; }
+    /* Separar el título superior y dar espacio inferior para la animación */
+    .hero { padding-top: 40px; margin-bottom: 50px; }
     .hero h1 { font-size: 34px; margin-bottom: 15px; }
     .badge { margin-bottom: 20px; }
     
-    /* Evitar que los botones rompan el ancho */
+    /* Solución Imagen 1: Evitar que los botones rompan el ancho y dar margen abajo */
+    .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto 80px auto; }
     .hero-buttons button { width: 100%; }
+
+    /* Solución Imagen 3: Hacer las tarjetas Bento más compactas en móvil */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr); /* Fuerza 2 columnas en móvil para las pequeñas */
+        gap: 15px;
+    }
+    
+    /* Las tarjetas que originalmente eran 'span-2' (las que tienen imagen) siguen ocupando todo el ancho en móvil */
+    .bento-card.span-2 {
+        grid-column: span 2;
+    }
+
+    /* Ajustes internos de las tarjetas pequeñas para que no se vean apretadas en 2 columnas */
+    .bento-card:not(.span-2) {
+        padding: 20px;
+    }
+    .bento-card:not(.span-2) .card-icon {
+        width: 40px; height: 40px; font-size: 20px; margin-bottom: 15px;
+    }
+    .bento-card:not(.span-2) h3 {
+        font-size: 16px; margin-bottom: 8px;
+    }
+    .bento-card:not(.span-2) p {
+        font-size: 13px; line-height: 1.4;
+    }
+
+    /* Solución Imagen 2: Planes de precio uno al lado del otro */
+    .pricing-cards { 
+        flex-direction: row; /* Forzar fila en lugar de columna */
+        gap: 15px; /* Reducir espacio entre ellas */
+        align-items: stretch; /* Que ambas tengan la misma altura */
+    }
+    .price-card {
+        padding: 20px 15px; /* Reducir padding interno para ganar espacio */
+    }
+    .price-card.popular {
+        transform: scale(1); /* Quitar el escalado que la hace sobresalir */
+    }
+    .price-card.popular:hover {
+        transform: translateY(-5px);
+    }
+    
+    /* Ajustes de texto en los planes para que quepan en 2 columnas */
+    .price-card h3 { font-size: 18px; margin-bottom: 10px; }
+    .price { font-size: 32px; margin-bottom: 15px; }
+    .currency { font-size: 18px; }
+    .period { font-size: 12px; }
+    .features-list li { font-size: 12px; margin-bottom: 10px; gap: 6px; }
+    .popular-badge { font-size: 10px; padding: 4px 12px; top: -10px; }
+    .btn-outline, .btn-primary { padding: 10px; font-size: 14px; }
+}
+
+/* Ajuste extremo para celulares muy pequeños (ej. iPhone SE) */
+@media (max-width: 400px) {
+     /* Si la pantalla es minúscula, volvemos a 1 columna en precios y bento para evitar que el texto se rompa */
+    .pricing-cards { flex-direction: column; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-card.span-2 { grid-column: span 1; }
 }
