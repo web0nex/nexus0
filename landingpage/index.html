@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaAI - Landing Page by NexusWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="blob blob-purple"></div>
+    <div class="blob blob-cyan"></div>
+
+    <header class="navbar">
+        <div class="header-left">
+            <a href="../index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver
+            </a>
+            <div class="logo">Nexus<span class="nexus-blue">Web</span></div>
+        </div>
+        <div class="project-tag">NovaAI SaaS</div>
+    </header>
+
+    <section class="hero reveal">
+        <div class="badge">🚀 Versión 2.0 ya disponible</div>
+        <h1>Potencia tu trabajo con <span class="gradient-text">NovaAI</span></h1>
+        <p>Automatiza tareas aburridas, genera contenido en segundos y multiplica tu productividad por diez con nuestra inteligencia artificial avanzada.</p>
+        <div class="hero-buttons">
+            <button class="btn-primary glow-effect">Comenzar Gratis</button>
+            <button class="btn-secondary">▶ Ver Demo</button>
+        </div>
+        
+        <div class="hero-image-wrapper">
+            <img src="img/hero-mockup.png" alt="Interfaz de NovaAI" class="hero-img" onerror="this.src='https://via.placeholder.com/900x500/141928/00f0ff?text=Falta+imagen:+img/hero-mockup.png'">
+        </div>
+    </section>
+
+    <div class="marquee-container reveal">
+        <p class="marquee-title">Se integra a la perfección con tus herramientas favoritas</p>
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>Notion</span> <span class="dot">•</span>
+                <span>Slack</span> <span class="dot">•</span>
+                <span>Trello</span> <span class="dot">•</span>
+                <span>Figma</span> <span class="dot">•</span>
+                <span>WordPress</span> <span class="dot">•</span>
+                <span>Shopify</span> <span class="dot">•</span>
+                <span>Notion</span> <span class="dot">•</span>
+                <span>Slack</span> <span class="dot">•</span>
+                <span>Trello</span> <span class="dot">•</span>
+                <span>Figma</span> <span class="dot">•</span>
+                <span>WordPress</span> <span class="dot">•</span>
+                <span>Shopify</span> <span class="dot">•</span>
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <h2 class="section-title reveal">Todo lo que necesitas, en un solo lugar</h2>
+        <div class="bento-grid">
+            
+            <div class="bento-card span-2 reveal">
+                <div class="card-content">
+                    <h3>Generación de Texto Ultrarrápida</h3>
+                    <p>Crea artículos, correos y reportes en segundos. Nuestra IA entiende tu tono de voz.</p>
+                </div>
+                <div class="bento-img-container">
+                    <img src="img/bento-1.png" alt="Generación de texto" class="bento-img" onerror="this.src='https://via.placeholder.com/400x200/0f141f/9d4edd?text=Falta+imagen:+img/bento-1.png'">
+                </div>
+            </div>
+            
+            <div class="bento-card reveal">
+                <div class="card-icon cyan">⚡</div>
+                <h3>Rendimiento</h3>
+                <p>Servidores dedicados para una respuesta en milisegundos.</p>
+            </div>
+
+            <div class="bento-card reveal">
+                <div class="card-icon purple">🔒</div>
+                <h3>Seguridad Nivel Banco</h3>
+                <p>Tus datos están encriptados y nunca se comparten.</p>
+            </div>
+
+            <div class="bento-card span-2 reveal">
+                <div class="card-content">
+                    <h3>Análisis de Datos Visual</h3>
+                    <p>Convierte hojas de cálculo aburridas en gráficos interactivos con un solo clic.</p>
+                </div>
+                <div class="bento-img-container">
+                    <img src="img/bento-2.png" alt="Gráficos" class="bento-img" onerror="this.src='https://via.placeholder.com/400x200/0f141f/00f0ff?text=Falta+imagen:+img/bento-2.png'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing reveal">
+        <h2 class="section-title">Planes simples y transparentes</h2>
+        
+        <div class="billing-toggle">
+            <span class="toggle-label" id="label-monthly">Mensual</span>
+            <label class="switch">
+                <input type="checkbox" id="pricing-toggle" checked>
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label active" id="label-yearly">Anual <span class="discount-badge">-20%</span></span>
+        </div>
+
+        <div class="pricing-cards">
+            <div class="price-card">
+                <h3>Básico</h3>
+                <p class="price"><span class="currency">$</span><span class="amount" data-monthly="15" data-yearly="12">12</span><span class="period">/mes</span></p>
+                <ul class="features-list">
+                    <li>✔️ 10,000 palabras por mes</li>
+                    <li>✔️ Soporte por email</li>
+                    <li>✔️ 5 integraciones</li>
+                </ul>
+                <button class="btn-outline">Elegir Básico</button>
+            </div>
+
+            <div class="price-card popular">
+                <div class="popular-badge">Más Elegido</div>
+                <h3>Profesional</h3>
+                <p class="price"><span class="currency">$</span><span class="amount" data-monthly="29" data-yearly="24">24</span><span class="period">/mes</span></p>
+                <ul class="features-list">
+                    <li>✔️ Palabras ilimitadas</li>
+                    <li>✔️ Soporte prioritario 24/7</li>
+                    <li>✔️ Integraciones ilimitadas</li>
+                    <li>✔️ Acceso a nuevas funciones</li>
+                </ul>
+                <button class="btn-primary glow-effect">Elegir Profesional</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Landing Page by NexusWeb - Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

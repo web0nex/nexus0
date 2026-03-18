@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reservas - Portfolio NexusWeb</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="../index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                Volver
+            </a>
+            <div class="logo">Nexus<span class="nexus-blue">Web</span></div>
+        </div>
+        <div class="project-title">Sistema de Reservas</div>
+    </header>
+
+    <div class="container">
+        <section class="hero animate-fade-in">
+            <h1>RESERVA TU MOMENTO DE BELLEZA EN SEGUNDOS</h1>
+            <p>Elige tu estilo, profesional y horario ideal para unas uñas perfectas.</p>
+            <button class="cta-button pulse-anim">AGENDAR CITA AHORA</button>
+        </section>
+
+        <main class="main-section">
+            <section class="catalog-container">
+                <h2 class="animate-slide-up">TU CATÁLOGO DE SERVICIOS</h2>
+                <div class="catalog-grid">
+                    
+                    <div class="catalog-card animate-slide-up delay-1">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Manicura Rusa Profunda</p>
+                        <p class="service-desc">Limpieza impecable y esmaltado duradero.</p>
+                        <p class="service-price">$25.00</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+                    
+                    <div class="catalog-card animate-slide-up delay-2">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Uñas Acrílicas Sculpted</p>
+                        <p class="service-desc">Extensión y diseño personalizado.</p>
+                        <p class="service-price">$55.00</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+                    
+                    <div class="catalog-card animate-slide-up delay-3">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Pedicura Spa Premium</p>
+                        <p class="service-desc">Relajación y cuidado completo para tus pies.</p>
+                        <p class="service-price">$45.00</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+                    
+                    <div class="catalog-card animate-slide-up delay-4">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Polygel Full Set</p>
+                        <p class="service-desc">Resistencia y naturalidad.</p>
+                        <p class="service-price">$60.00</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+                    
+                    <div class="catalog-card animate-slide-up delay-5">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Esmaltado Semipermanente</p>
+                        <p class="service-desc">Brillo y duración sin esfuerzo.</p>
+                        <p class="service-price">$30.00</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+                    
+                    <div class="catalog-card animate-slide-up delay-6">
+                        <div class="placeholder-img">
+                            <span>📷 Imagen de tu servicio</span>
+                        </div>
+                        <p class="service-title">Nail Art Detallado</p>
+                        <p class="service-desc">Diseños únicos y pintados a mano.</p>
+                        <p class="service-price">Consultar</p>
+                        <button class="select-btn">Seleccionar</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <aside class="reservation-panel">
+                <div class="panel-card main-booking animate-slide-in-right">
+                    <h3>TU PANEL DE RESERVA</h3>
+                    <div class="form-group">
+                        <label>Selecciona Servicio</label>
+                        <select class="dark-select">
+                            <option value="" disabled selected>Elije tu servicio...</option>
+                            <option value="1">Manicura Rusa Profunda</option>
+                            <option value="2">Uñas Acrílicas Sculpted</option>
+                            <option value="3">Pedicura Spa Premium</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Selecciona Profesional</label>
+                        <select class="dark-select">
+                            <option value="" disabled selected>Elije tu profesional...</option>
+                            <option value="1">Elena (Nail Artist)</option>
+                            <option value="2">Ana (Spa Therapist)</option>
+                        </select>
+                    </div>
+                    <div class="calendar-visual">
+                        <span class="cal-icon">📅</span> Calendario Interactivo
+                    </div>
+                    <label class="hours-label">Horarios Disponibles</label>
+                    <div class="hours-grid">
+                        <button class="hour-btn">10:00 AM</button>
+                        <button class="hour-btn">11:30 AM</button>
+                        <button class="hour-btn selected">02:00 PM</button>
+                        <button class="hour-btn">04:30 PM</button>
+                        <button class="hour-btn">05:00 PM</button>
+                        <button class="hour-btn">06:30 PM</button>
+                    </div>
+                    <button class="cta-button confirm-btn" id="btn-confirmar">CONFIRMAR RESERVA</button>
+                </div>
+
+                <div class="panel-card contact-panel animate-slide-in-right delay-2">
+                    <h3>GESTIÓN Y UBICACIÓN</h3>
+                    <button class="contact-btn">💬 Contacto para consultas</button>
+                    <button class="contact-btn">📍 Ver nuestra ubicación</button>
+                </div>
+            </aside>
+        </main>
+
+        <section class="features-extra animate-slide-up delay-3">
+            <h2>Experiencia Optimizada</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="f-icon">✨</div>
+                    <h4>Citas al Instante</h4>
+                    <p>Tus clientes reservan en menos de un minuto desde su celular.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="f-icon">🔔</div>
+                    <h4>Recordatorios Automáticos</h4>
+                    <p>Reduce las inasistencias con notificaciones programadas.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="f-icon">📊</div>
+                    <h4>Panel de Control</h4>
+                    <p>Administra tus ingresos, profesionales y servicios fácilmente.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
