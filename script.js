@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
         let offsetMovil = 120; 
 
         if (targetId === '#proyectos') {
-            offsetPC = -15;    
-            offsetMovil = -15; 
+            offsetPC = -90;    
+            offsetMovil = -65; 
         } 
         else if (targetId === '#casos-exito') {
-            offsetPC = -185;    
+            offsetPC = -150;    
             offsetMovil = 0; 
         } 
         else if (targetId === '#proceso') {
@@ -38,16 +38,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    // --- LÓGICA DEL CARRUSEL INFINITO PERFECTO (SIN SALTOS VISIBLES) ---
-    const track = document.getElementById("carousel-track");
-    const prevBtn = document.getElementById("prev-btn");
-    const nextBtn = document.getElementById("next-btn");
+    // --- FÁBRICA DE CARRUSELES INFINITOS (REUTILIZABLE) ---
+    // Esta función permite crear todos los carruseles que quieras sin repetir código
+    function setupInfiniteCarousel(trackId, prevBtnId, nextBtnId, cardSelector) {
+        const track = document.getElementById(trackId);
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
 
-    if (track && prevBtn && nextBtn) {
-        const originalCards = Array.from(track.querySelectorAll(".testi-card"));
+        if (!track || !prevBtn || !nextBtn) return;
+
+        const originalCards = Array.from(track.querySelectorAll(cardSelector));
         const cardCount = originalCards.length;
 
-        // 1. Clonar tarjetas
+        // Clonar tarjetas
         originalCards.forEach(card => {
             let clone = card.cloneNode(true);
             clone.classList.remove('active', 'focused');
@@ -59,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
             track.appendChild(clone);
         });
 
-        const allCards = Array.from(track.querySelectorAll(".testi-card"));
+        const allCards = Array.from(track.querySelectorAll(cardSelector));
         let currentIndex = cardCount; 
         let isJumping = false;
         let scrollTimeout;
@@ -95,17 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        // Función de salto ninja mejorada (Apagamos TODO lo que pelea contra JS antes de saltar)
         function jumpToMiddleIfNecessary() {
             if (currentIndex < cardCount || currentIndex >= cardCount * 2) {
                 isJumping = true;
                 
-                // Desactivamos animaciones y comportamientos magnéticos
                 track.style.scrollBehavior = 'auto';
                 track.style.scrollSnapType = 'none';
                 allCards.forEach(c => c.style.transition = 'none');
 
-                // Calculamos el índice espejo en el set del medio
                 if (currentIndex < cardCount) {
                     currentIndex += cardCount;
                 } else if (currentIndex >= cardCount * 2) {
@@ -116,10 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 track.scrollLeft = card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2);
                 setFocusStrict(currentIndex);
 
-                // Forzamos al navegador a aplicar el salto invisible YA MISMO
                 void track.offsetWidth; 
 
-                // Restauramos las animaciones
                 track.style.scrollBehavior = 'smooth';
                 track.style.scrollSnapType = 'x mandatory';
                 allCards.forEach(c => c.style.transition = '');
@@ -151,7 +149,6 @@ document.addEventListener("DOMContentLoaded", () => {
         track.addEventListener("scroll", () => {
             window.requestAnimationFrame(updateFocusedCardByScroll);
             clearTimeout(scrollTimeout);
-            // Reducimos el timeout para que el salto ocurra apenas dejes de deslizar
             scrollTimeout = setTimeout(jumpToMiddleIfNecessary, 100);
         });
 
@@ -161,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
             track.scrollLeft = card.offsetLeft - (track.clientWidth / 2) + (card.offsetWidth / 2);
         });
 
-        // Inicialización teletransportando al medio sin animaciones
         setTimeout(() => {
             isJumping = true;
             track.style.scrollBehavior = 'auto';
@@ -180,21 +176,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 100); 
     }
 
-
-    // --- SISTEMA DE NOTIFICACIONES (TOAST) ---
-    const toastContainer = document.getElementById("toast-container");
-
-    function mostrarNotificacion(mensaje, icono = "bx-info-circle") {
-        const toast = document.createElement("div");
-        toast.className = "toast";
-        toast.innerHTML = `<i class='bx ${icono}'></i> <span>${mensaje}</span>`;
-        toastContainer.appendChild(toast);
-        setTimeout(() => toast.classList.add("show"), 10);
-        setTimeout(() => {
-            toast.classList.remove("show");
-            setTimeout(() => toast.remove(), 400);
-        }, 3000);
-    }
+    // INICIAMOS LOS DOS CARRUSELES
+    setupInfiniteCarousel("projects-track", "prev-btn-projects", "next-btn-projects", ".project-card");
+    setupInfiniteCarousel("testimonials-track", "prev-btn-testi", "next-btn-testi", ".testi-card");
 
 
     // --- ANIMACIONES AL HACER SCROLL ---
