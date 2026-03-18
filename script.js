@@ -8,15 +8,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!targetElement) return;
         
         let offsetPC = 140;    
-        let offsetMovil = 120; 
+        let offsetMovil = 95; 
 
         if (targetId === '#proyectos') {
             offsetPC = -90;    
-            offsetMovil = -65; 
+            offsetMovil = -55; 
         } 
         else if (targetId === '#casos-exito') {
             offsetPC = -150;    
-            offsetMovil = 0; 
+            offsetMovil = 5; 
         } 
         else if (targetId === '#proceso') {
             offsetPC = 60;     
