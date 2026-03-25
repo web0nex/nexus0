@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!targetElement) return;
 
         const navHeight = navbar.offsetHeight;
-        const extraOffset = 20;
+        const extraOffset = -55;
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - navHeight - extraOffset;
 
