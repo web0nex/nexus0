@@ -3,53 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusWeb | Desarrollo y Diseño Web</title>
+    <title>NexusWeb | Desarrollo Web para Emprendedores</title>
+    <meta name="description" content="Transformo tu idea en una web profesional. Diseño y desarrollo web a medida para emprendedores y pequeños negocios.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-top">
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
             <div class="logo">Nexus<span>Web</span></div>
-        </div>
-        
-        <div class="nav-links" id="nav-links">
-            <a href="#proyectos" class="scroll-link">Proyectos</a>
-            <a href="#casos-exito" class="scroll-link">Reseñas</a>
-            <a href="#proceso" class="scroll-link">Proceso</a>
+            <div class="nav-links" id="nav-links">
+                <a href="#proyectos" class="scroll-link">Proyectos</a>
+                <a href="#trabajos" class="scroll-link">Trabajos</a>
+                <a href="#precios" class="scroll-link">Precios</a>
+                <a href="#proceso" class="scroll-link">Proceso</a>
+                <a href="#faq" class="scroll-link">FAQ</a>
+            </div>
+            <button class="nav-cta scroll-link" id="btn-nav-cotizar">Hablemos <i class='bx bx-right-arrow-alt'></i></button>
+            <button class="hamburger" id="hamburger" aria-label="Menú">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#proyectos" class="scroll-link mobile-link">Proyectos</a>
+        <a href="#trabajos" class="scroll-link mobile-link">Trabajos</a>
+        <a href="#precios" class="scroll-link mobile-link">Precios</a>
+        <a href="#proceso" class="scroll-link mobile-link">Proceso</a>
+        <a href="#faq" class="scroll-link mobile-link">FAQ</a>
+        <button class="btn-3d mobile-cta" id="btn-mobile-cotizar">Cotizar ahora <i class='bx bxl-whatsapp'></i></button>
+    </div>
+
+    <!-- HERO -->
     <header class="hero">
+        <div class="hero-bg-grid"></div>
         <div class="hero-content">
-            <div class="badge">🔥 Impulsa tu negocio hoy</div>
-            <h1>Transformo tu idea en una <span class="gradient-text">Web Increíble</span></h1>
-            <p>Atrae más clientes y transmite confianza con una página web rápida, moderna y diseñada a medida para tu emprendimiento.</p>
+            <div class="availability-badge">
+                <span class="badge-dot"></span> Disponible para nuevos proyectos
+            </div>
+            <h1>Tu idea merece una web que <span class="gradient-text">venda de verdad</span></h1>
+            <p>Diseño y desarrollo webs rápidas, modernas y a medida para emprendedores que quieren crecer online. Sin templates genéricos, sin excusas.</p>
             
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <strong>+3 años</strong>
+                    <span>desarrollando</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong>72hs</strong>
+                    <span>primer borrador</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong>100%</strong>
+                    <span>a medida</span>
+                </div>
+            </div>
+
             <div class="hero-buttons">
                 <button class="btn-3d pulse-anim" id="btn-cotizar">
-                    <i class='bx bx-rocket'></i> Quiero mi página web
+                    <i class='bx bxl-whatsapp'></i> Quiero mi página web
                 </button>
-                <a href="#proceso" class="btn-outline scroll-link">
-                    <i class='bx bx-layer'></i> Ver proceso
+                <a href="#proyectos" class="btn-ghost scroll-link">
+                    Ver demos en vivo <i class='bx bx-chevron-right'></i>
                 </a>
             </div>
         </div>
         
         <div class="hero-visual">
-            <div class="floating-card glow-effect">
-                <i class='bx bx-code-alt'></i>
-                <h3>Diseño a Medida</h3>
-                <div class="skeleton-line"></div>
-                <div class="skeleton-line short"></div>
+            <div class="browser-mockup">
+                <div class="browser-bar">
+                    <div class="browser-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="browser-url">tunegocio.com</div>
+                </div>
+                <div class="browser-body">
+                    <div class="mock-hero-img"></div>
+                    <div class="mock-content">
+                        <div class="mock-line wide"></div>
+                        <div class="mock-line medium"></div>
+                        <div class="mock-line short"></div>
+                        <div class="mock-btn"></div>
+                    </div>
+                    <div class="mock-cards">
+                        <div class="mock-card"><div class="mock-icon"></div><div class="mock-card-text"></div></div>
+                        <div class="mock-card"><div class="mock-icon"></div><div class="mock-card-text"></div></div>
+                        <div class="mock-card"><div class="mock-icon"></div><div class="mock-card-text"></div></div>
+                    </div>
+                </div>
             </div>
+            <div class="floating-tag tag-1"><i class='bx bx-check-circle'></i> Responsive</div>
+            <div class="floating-tag tag-2"><i class='bx bx-rocket'></i> Ultra rápida</div>
+            <div class="floating-tag tag-3"><i class='bx bx-search-alt'></i> SEO listo</div>
         </div>
     </header>
 
+    <!-- TECH STRIP -->
+    <div class="tech-strip reveal">
+        <p>Construido con tecnologías modernas</p>
+        <div class="tech-logos">
+            <span><i class='bx bxl-html5'></i> HTML5</span>
+            <span><i class='bx bxl-css3'></i> CSS3</span>
+            <span><i class='bx bxl-javascript'></i> JavaScript</span>
+            <span><i class='bx bxl-react'></i> React</span>
+            <span><i class='bx bxl-nodejs'></i> Node.js</span>
+            <span><i class='bx bxl-wordpress'></i> WordPress</span>
+            <span><i class='bx bxl-figma'></i> Figma</span>
+        </div>
+    </div>
+
+    <!-- PROYECTOS -->
     <section id="proyectos" class="projects-section">
-        <h2 class="reveal">Sistemas Funcionales</h2>
-        <p class="section-sub reveal">Demostraciones técnicas de paneles y tiendas online.</p>
+        <div class="section-header reveal">
+            <div class="section-tag">Portafolio</div>
+            <h2>Demos funcionales en vivo</h2>
+            <p class="section-sub">No son mockups. Son sistemas reales que podés probar ahora mismo.</p>
+        </div>
         
         <div class="carousel-container reveal">
             <button class="carousel-btn prev-btn" id="prev-btn-projects">
@@ -60,44 +138,76 @@
                 <div class="project-card active">
                     <div class="project-image">
                         <img src="img/tienda.jpg" alt="Vista previa Tienda Online">
+                        <div class="project-overlay">
+                            <span class="project-type">E-commerce</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Tienda Online</h3>
-                        <p>Diseño enfocado en conversión y ventas.</p>
-                        <a href="ecommerce-setup/index.html" class="btn-outline card-btn">Ver Proyecto</a>
+                        <p>Catálogo de productos con carrito, checkout y gestión de pedidos.</p>
+                        <div class="project-tags">
+                            <span>Pagos online</span>
+                            <span>Stock</span>
+                            <span>Mobile-first</span>
+                        </div>
+                        <a href="ecommerce-setup/index.html" class="btn-outline card-btn" target="_blank">Ver demo <i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
                         <img src="img/panel.jpg" alt="Vista previa Panel de Administración">
+                        <div class="project-overlay">
+                            <span class="project-type">Dashboard</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Panel de Gestión</h3>
-                        <p>Sistema web para control de datos e inventario.</p>
-                        <a href="admin-panel/index.html" class="btn-outline card-btn">Ver Proyecto</a>
+                        <p>Sistema web para control de datos, usuarios e inventario en tiempo real.</p>
+                        <div class="project-tags">
+                            <span>Estadísticas</span>
+                            <span>CRUD</span>
+                            <span>Reportes</span>
+                        </div>
+                        <a href="admin-panel/index.html" class="btn-outline card-btn" target="_blank">Ver demo <i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
                         <img src="img/reserva.jpg" alt="Vista previa Sistema de Reservas">
+                        <div class="project-overlay">
+                            <span class="project-type">Booking</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Sistema de Reservas</h3>
-                        <p>Tienda de servicios con agenda automática para clientes.</p>
-                         <a href="reservas/index.html" class="btn-outline card-btn">Ver Proyecto</a>
+                        <p>Agenda automática para clientes: turnos, horarios y confirmaciones.</p>
+                        <div class="project-tags">
+                            <span>Calendario</span>
+                            <span>Notificaciones</span>
+                            <span>Pagos</span>
+                        </div>
+                        <a href="reservas/index.html" class="btn-outline card-btn" target="_blank">Ver demo <i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
                         <img src="img/landing.jpg" alt="Vista previa Landing Page">
+                        <div class="project-overlay">
+                            <span class="project-type">Landing</span>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Landing Page</h3>
-                        <p>Diseño de alta conversión para captar leads y contactos.</p>
-                        <a href="landingpage/index.html" class="btn-outline card-btn">Ver Proyecto</a>
+                        <p>Página de captura de alta conversión con formulario, testimonios y CTA.</p>
+                        <div class="project-tags">
+                            <span>Leads</span>
+                            <span>Conversión</span>
+                            <span>Analytics</span>
+                        </div>
+                        <a href="landingpage/index.html" class="btn-outline card-btn" target="_blank">Ver demo <i class='bx bx-link-external'></i></a>
                     </div>
                 </div>
             </div>
@@ -108,151 +218,396 @@
         </div>
     </section>
 
-    <section id="casos-exito" class="testimonials-section reveal">
-        <h2>Casos de Éxito</h2>
-        <p class="section-sub">Negocios que ya potenciaron sus ventas conmigo.</p>
+    <!-- POR QUÉ YO -->
+    <section id="por-que" class="why-section reveal">
+        <div class="section-header">
+            <div class="section-tag">Diferencial</div>
+            <h2>¿Por qué trabajar conmigo?</h2>
+            <p class="section-sub">No soy una agencia grande con procesos lentos. Soy el desarrollador que va a estar en cada paso.</p>
+        </div>
         
-        <div class="carousel-container">
-            <button class="carousel-btn prev-btn" id="prev-btn-testi">
-                <i class='bx bx-chevron-left'></i>
-            </button>
-            <div class="carousel-slide" id="testimonials-track">
-                <div class="testi-card active">
-                    <div class="testi-img">
-                        <img src="img/tienda.jpg" alt="Proyecto Gamer">
-                    </div>
-                    <div class="testi-body">
-                        <div class="stars">
-                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                        </div>
-                        <p class="quote">"Ezequiel entendió a la perfección lo que queríamos. La tienda carga rapidísimo, se ve increíble en el celular y nuestras ventas aumentaron un 30% en el primer mes. Un crack total."</p>
-                        <div class="client-profile">
-                            <h4>Gamer Group</h4>
-                            <span>Tienda de Insumos Tech</span>
-                        </div>
-                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-img">
-                        <img src="img/panel.jpg" alt="Proyecto Trisquel">
-                    </div>
-                    <div class="testi-body">
-                        <div class="stars">
-                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                        </div>
-                        <p class="quote">"Estábamos perdiendo clientes porque nuestra web vieja era un desastre. Nos renovó toda la imagen de marca y ahora transmitimos muchísima más confianza. Súper recomendable."</p>
-                        <div class="client-profile">
-                            <h4>Trisquel Joyas</h4>
-                            <span>Accesorios Premium</span>
-                        </div>
-                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-img">
-                        <img src="img/tienda.jpg" alt="Proyecto Bodega">
-                    </div>
-                    <div class="testi-body">
-                        <div class="stars">
-                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star-half'></i>
-                        </div>
-                        <p class="quote">"La atención al detalle es destacable. Necesitábamos una landing page elegante para captar clientes para nuestros servicios y el resultado superó nuestras expectativas ampliamente."</p>
-                        <div class="client-profile">
-                            <h4>Bodega Galan</h4>
-                            <span>Servicios & Eventos</span>
-                        </div>
-                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
-
-                <div class="testi-card">
-                    <div class="testi-img">
-                        <img src="img/panel.jpg" alt="Proyecto Local de Ropa">
-                    </div>
-                    <div class="testi-body">
-                        <div class="stars">
-                            <i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i><i class='bx bxs-star'></i>
-                        </div>
-                        <p class="quote">"Nos hizo una web súper intuitiva. Ahora los clientes pueden ver todo nuestro catálogo y comprar directo por WhatsApp sin que tengamos que estar todo el día respondiendo mensajes. ¡Una genia!"</p>
-                        <div class="client-profile">
-                            <h4>Urbano Style</h4>
-                            <span>Local de Ropa</span>
-                        </div>
-                        <a href="#" class="testi-link">Visitar web <i class='bx bx-link-external'></i></a>
-                    </div>
-                </div>
+        <div class="why-grid">
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-time-five'></i></div>
+                <h3>Entrega rápida</h3>
+                <p>Primer borrador en 72 horas. Tu web terminada en días, no en meses. Sin esperas infinitas.</p>
             </div>
-            <button class="carousel-btn next-btn" id="next-btn-testi">
-                <i class='bx bx-chevron-right'></i>
-            </button>
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-user-voice'></i></div>
+                <h3>Trato directo</h3>
+                <p>Hablás conmigo, no con un intermediario. Entiendo tu negocio y lo reflejo en cada detalle del diseño.</p>
+            </div>
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-mobile-alt'></i></div>
+                <h3>Mobile-first</h3>
+                <p>Más del 70% de las visitas son desde el celular. Diseño primero para móvil, después para escritorio.</p>
+            </div>
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-tachometer'></i></div>
+                <h3>Rendimiento real</h3>
+                <p>Webs que cargan en menos de 2 segundos. La velocidad no es un extra, es parte del diseño.</p>
+            </div>
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-search-alt-2'></i></div>
+                <h3>SEO desde el código</h3>
+                <p>Estructura semántica, meta tags y optimización para que Google te encuentre desde el primer día.</p>
+            </div>
+            <div class="why-card hover-glow">
+                <div class="why-icon"><i class='bx bx-support'></i></div>
+                <h3>Soporte post-entrega</h3>
+                <p>No te dejo solo. Incluyo 30 días de soporte para ajustes y cambios sin costo adicional.</p>
+            </div>
         </div>
     </section>
 
-    <section id="proceso" class="process-section reveal">
-        <h2>¿Cómo sigue el proceso?</h2>
-        
-        <div class="process-grid">
-            <div class="process-step hover-glow">
-                <div class="step-number">1</div>
-                <div class="step-text">Nos escribís por WhatsApp</div>
-            </div>
-            
-            <div class="process-step hover-glow">
-                <div class="step-number">2</div>
-                <div class="step-text">Te respondemos en el acto</div>
+    <!-- PRECIOS -->
+    <section id="precios" class="pricing-section reveal">
+        <div class="section-header">
+            <div class="section-tag">Inversión</div>
+            <h2>Planes claros, sin sorpresas</h2>
+            <p class="section-sub">Elegí el plan que más se adapta a tu negocio. Todos incluyen diseño 100% personalizado.</p>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="pricing-card hover-glow">
+                <div class="pricing-header-card">
+                    <div class="pricing-icon"><i class='bx bx-rocket'></i></div>
+                    <h3>Starter</h3>
+                    <p>Para emprendedores que arrancan</p>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">100</span>
+                    <span class="price-period">USD</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class='bx bx-check'></i> Landing page de 1 página</li>
+                    <li><i class='bx bx-check'></i> Diseño mobile-first</li>
+                    <li><i class='bx bx-check'></i> Formulario de contacto</li>
+                    <li><i class='bx bx-check'></i> Botón de WhatsApp</li>
+                    <li><i class='bx bx-check'></i> Optimización SEO básica</li>
+                    <li><i class='bx bx-check'></i> 15 días de soporte</li>
+                    <li class="feature-na"><i class='bx bx-x'></i> Blog o secciones extra</li>
+                    <li class="feature-na"><i class='bx bx-x'></i> Panel de administración</li>
+                </ul>
+                <button class="btn-outline pricing-btn" data-plan="Starter ($100 USD)">Elegir Starter</button>
             </div>
 
-            <div class="process-step hover-glow">
-                <div class="step-number">3</div>
-                <div class="step-text">Coordinamos reunión y presupuesto</div>
+            <div class="pricing-card featured hover-glow">
+                <div class="popular-badge">⭐ Más elegido</div>
+                <div class="pricing-header-card">
+                    <div class="pricing-icon"><i class='bx bx-store'></i></div>
+                    <h3>Pro</h3>
+                    <p>Para negocios que quieren crecer</p>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">250</span>
+                    <span class="price-period">USD</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class='bx bx-check'></i> Web multisección (hasta 5 páginas)</li>
+                    <li><i class='bx bx-check'></i> Diseño premium a medida</li>
+                    <li><i class='bx bx-check'></i> Blog o catálogo de productos</li>
+                    <li><i class='bx bx-check'></i> Animaciones y microinteracciones</li>
+                    <li><i class='bx bx-check'></i> SEO avanzado + velocidad</li>
+                    <li><i class='bx bx-check'></i> Integración Google Analytics</li>
+                    <li><i class='bx bx-check'></i> 30 días de soporte</li>
+                    <li class="feature-na"><i class='bx bx-x'></i> Panel de administración</li>
+                </ul>
+                <button class="btn-3d pricing-btn" data-plan="Pro ($250 USD)">Elegir Pro</button>
             </div>
-            
-            <div class="process-step hover-glow">
-                <div class="step-number">4</div>
-                <div class="step-text highlight-step">¡Tu web empieza a desarrollarse!</div>
+
+            <div class="pricing-card hover-glow">
+                <div class="pricing-header-card">
+                    <div class="pricing-icon"><i class='bx bx-layer'></i></div>
+                    <h3>Business</h3>
+                    <p>Para negocios con necesidades complejas</p>
+                </div>
+                <div class="pricing-price">
+                    <span class="price-currency">$</span>
+                    <span class="price-amount">500</span>
+                    <span class="price-period">USD+</span>
+                </div>
+                <ul class="pricing-features">
+                    <li><i class='bx bx-check'></i> Sistema web a medida</li>
+                    <li><i class='bx bx-check'></i> Tienda online o sistema de reservas</li>
+                    <li><i class='bx bx-check'></i> Panel de administración</li>
+                    <li><i class='bx bx-check'></i> Base de datos y backend</li>
+                    <li><i class='bx bx-check'></i> Pasarela de pagos</li>
+                    <li><i class='bx bx-check'></i> Usuarios y roles</li>
+                    <li><i class='bx bx-check'></i> 60 días de soporte</li>
+                    <li><i class='bx bx-check'></i> Capacitación incluida</li>
+                </ul>
+                <button class="btn-outline pricing-btn" data-plan="Business ($500 USD+)">Hablar del proyecto</button>
+            </div>
+        </div>
+
+        <div class="pricing-note">
+            <i class='bx bx-info-circle'></i>
+            Los precios son orientativos. Cada proyecto es único — hablemos y te doy una cotización exacta sin compromiso.
+        </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="process-section reveal">
+        <div class="section-header">
+            <div class="section-tag">¿Cómo funciona?</div>
+            <h2>De tu idea a tu web en 4 pasos</h2>
+        </div>
+        
+        <div class="process-timeline">
+            <div class="process-step-new hover-glow">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <div class="step-icon"><i class='bx bxl-whatsapp'></i></div>
+                    <h3>Me escribís</h3>
+                    <p>Contame tu idea por WhatsApp. Respondí en menos de 24hs con una propuesta inicial.</p>
+                </div>
+            </div>
+            <div class="process-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+            <div class="process-step-new hover-glow">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <div class="step-icon"><i class='bx bx-conversation'></i></div>
+                    <h3>Reunión de briefing</h3>
+                    <p>Charlamos tu proyecto, analizamos tu competencia y definimos el camino a seguir.</p>
+                </div>
+            </div>
+            <div class="process-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+            <div class="process-step-new hover-glow">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <div class="step-icon"><i class='bx bx-palette'></i></div>
+                    <h3>Diseño y desarrollo</h3>
+                    <p>En 72hs tenés el primer borrador. Iteramos hasta que estés 100% conforme.</p>
+                </div>
+            </div>
+            <div class="process-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+            <div class="process-step-new hover-glow">
+                <div class="step-num">04</div>
+                <div class="step-content">
+                    <div class="step-icon"><i class='bx bx-globe'></i></div>
+                    <h3>Lanzamos tu web</h3>
+                    <p>Publicamos, te enseño a usarla y quedo disponible 30 días para cualquier ajuste.</p>
+                </div>
             </div>
         </div>
 
         <div class="contact-actions">
             <button class="btn-whatsapp pulse-green" id="btn-cotizar-2">
-                Cotizar por WhatsApp <i class='bx bxl-whatsapp'></i>
+                <i class='bx bxl-whatsapp'></i> Empezar mi proyecto
             </button>
-            <a href="mailto:ezequielmolina1503@gmail.com" class="email-link">o envíame un correo electrónico</a>
+            <a href="mailto:ezequielmolina1503@gmail.com" class="email-link">
+                <i class='bx bx-envelope'></i> o envíame un correo
+            </a>
         </div>
     </section>
 
+    <!-- TRABAJOS REALIZADOS -->
+    <section id="trabajos" class="works-section reveal">
+        <div class="section-header">
+            <div class="section-tag">Clientes reales</div>
+            <h2>Negocios que ya tienen su web</h2>
+            <p class="section-sub">Proyectos reales desarrollados para emprendedores y negocios de Argentina.</p>
+        </div>
+
+        <div class="works-grid">
+
+            <!-- ============================================================
+                 PLANTILLA DE TRABAJO — Copiar y pegar para cada cliente nuevo
+                 Reemplazar: NOMBRE_NEGOCIO, RUBRO, DESCRIPCION, URL_WEB, img/IMAGEN.jpg
+                 Tipo de badge: "Landing Page" | "Tienda Online" | "Web Institucional" | "Sistema"
+            ============================================================ -->
+
+            <div class="work-card hover-glow">
+                <div class="work-img">
+                    <!-- Reemplazar src con la imagen del proyecto -->
+                    <img src="img/tienda.jpg" alt="NOMBRE_NEGOCIO">
+                    <div class="work-badge">Tienda Online</div>
+                </div>
+                <div class="work-body">
+                    <div class="work-meta">
+                        <span class="work-rubro"><i class='bx bx-buildings'></i> RUBRO DEL NEGOCIO</span>
+                    </div>
+                    <h3>NOMBRE DEL NEGOCIO</h3>
+                    <p>Breve descripción del proyecto: qué necesitaba el cliente, qué se hizo y el resultado obtenido.</p>
+                    <div class="work-tags">
+                        <span>Tag 1</span>
+                        <span>Tag 2</span>
+                        <span>Tag 3</span>
+                    </div>
+                    <a href="URL_DEL_SITIO" class="work-link" target="_blank">
+                        Ver sitio <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="work-card hover-glow">
+                <div class="work-img">
+                    <img src="img/panel.jpg" alt="NOMBRE_NEGOCIO">
+                    <div class="work-badge">Landing Page</div>
+                </div>
+                <div class="work-body">
+                    <div class="work-meta">
+                        <span class="work-rubro"><i class='bx bx-buildings'></i> RUBRO DEL NEGOCIO</span>
+                    </div>
+                    <h3>NOMBRE DEL NEGOCIO</h3>
+                    <p>Breve descripción del proyecto: qué necesitaba el cliente, qué se hizo y el resultado obtenido.</p>
+                    <div class="work-tags">
+                        <span>Tag 1</span>
+                        <span>Tag 2</span>
+                        <span>Tag 3</span>
+                    </div>
+                    <a href="URL_DEL_SITIO" class="work-link" target="_blank">
+                        Ver sitio <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="work-card hover-glow">
+                <div class="work-img">
+                    <img src="img/reserva.jpg" alt="NOMBRE_NEGOCIO">
+                    <div class="work-badge">Web Institucional</div>
+                </div>
+                <div class="work-body">
+                    <div class="work-meta">
+                        <span class="work-rubro"><i class='bx bx-buildings'></i> RUBRO DEL NEGOCIO</span>
+                    </div>
+                    <h3>NOMBRE DEL NEGOCIO</h3>
+                    <p>Breve descripción del proyecto: qué necesitaba el cliente, qué se hizo y el resultado obtenido.</p>
+                    <div class="work-tags">
+                        <span>Tag 1</span>
+                        <span>Tag 2</span>
+                        <span>Tag 3</span>
+                    </div>
+                    <a href="URL_DEL_SITIO" class="work-link" target="_blank">
+                        Ver sitio <i class='bx bx-link-external'></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mensaje mientras no haya clientes reales — BORRAR cuando tengas trabajos -->
+        <div class="works-empty" id="works-coming-soon">
+            <i class='bx bx-time-five'></i>
+            <p>Próximamente — primeros proyectos en camino. <button class="btn-ghost" id="btn-cotizar-works">¡Sé el primero!</button></p>
+        </div>
+
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section reveal">
+        <div class="section-header">
+            <div class="section-tag">Preguntas frecuentes</div>
+            <h2>Todo lo que querés saber</h2>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Cuánto tarda en estar lista mi web?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Depende del tipo de proyecto. Una landing page puede estar lista en 3-5 días. Una web con varias secciones tarda entre 1 y 2 semanas. Proyectos más complejos como tiendas online o sistemas a medida, entre 2 y 4 semanas. Siempre te doy una fecha de entrega concreta antes de empezar.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Necesito saber de tecnología para trabajar con vos?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Para nada. Me encargo de todo el proceso técnico. Vos me contás lo que necesitás, en qué rubro estás y qué objetivo tiene tu negocio. Yo te hago las preguntas correctas para entender tu proyecto y traduzco eso en una web que funcione.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Qué pasa si no me gusta el diseño?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Incluyo rondas de revisión en todos los planes. Si el primer borrador no te convence, lo ajustamos. Mi objetivo es que quedes 100% conforme con el resultado. Hasta que no estés satisfecho, no cerramos el proyecto.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Cómo son los pagos?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Trabajo con un 50% de anticipo al inicio y el 50% restante al entregar el proyecto. Acepto transferencia bancaria, Mercado Pago y PayPal. Los precios del sitio son en dólares pero también podemos acordar en pesos argentinos.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿La web va a aparecer en Google?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Todas las webs que desarrollo incluyen optimización SEO básica: estructura semántica correcta, meta tags, velocidad de carga y configuración para que Google la indexe. Para resultados avanzados de posicionamiento, existe un servicio adicional de SEO.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>¿Puedo hacer cambios después de que esté lista?</span>
+                    <i class='bx bx-plus faq-icon'></i>
+                </button>
+                <div class="faq-answer">
+                    <p>Sí, todos los planes incluyen un período de soporte post-entrega. Además, si necesitás cambios más adelante, ofrezco un servicio de mantenimiento mensual o por hora. También podés aprender a manejar el contenido vos mismo si querés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-        <p class="signature">© 2026 Ezequiel Molina | Diseñador y Desarrollador Web</p>
+        <div class="footer-inner">
+            <div class="footer-logo">Nexus<span>Web</span></div>
+            <p class="footer-tagline">Desarrollo web que convierte visitantes en clientes.</p>
+            <div class="footer-links">
+                <a href="#proyectos" class="scroll-link">Proyectos</a>
+                <a href="#trabajos" class="scroll-link">Trabajos</a>
+                <a href="#precios" class="scroll-link">Precios</a>
+                <a href="#proceso" class="scroll-link">Proceso</a>
+                <a href="#faq" class="scroll-link">FAQ</a>
+                <a href="mailto:ezequielmolina1503@gmail.com">Contacto</a>
+            </div>
+            <p class="signature">© 2026 Ezequiel Molina · Diseñador y Desarrollador Web · Quilmes, Buenos Aires</p>
+        </div>
     </footer>
 
+    <!-- MODAL COTIZACIÓN -->
     <div class="modal-overlay" id="modal">
         <div class="modal-content">
             <button class="close-modal" id="close-modal">&times;</button>
-            <h2>Cuéntame sobre tu proyecto</h2>
-            <p>Completa estos datos y te responderé con una propuesta.</p>
+            <div class="modal-header">
+                <div class="modal-icon"><i class='bx bx-message-dots'></i></div>
+                <h2>Contame tu proyecto</h2>
+                <p>Completá el formulario y te respondo con una propuesta en menos de 24 horas.</p>
+            </div>
             
             <form id="quote-form">
                 <div class="input-row">
                     <div class="input-group">
-                        <label>Tu Nombre</label>
-                        <input type="text" id="cliente-nombre" placeholder="Ej: Juan" required>
+                        <label>Tu nombre</label>
+                        <input type="text" id="cliente-nombre" placeholder="Ej: Juan García" required>
                     </div>
                     <div class="input-group">
-                        <label>Tu Marca / Empresa</label>
+                        <label>Tu marca / empresa</label>
                         <input type="text" id="cliente-marca" placeholder="Ej: TechStore" required>
                     </div>
                 </div>
 
                 <div class="input-group">
-                    <label>¿Qué servicio necesitas?</label>
+                    <label>¿Qué servicio necesitás?</label>
                     <select id="cliente-tipo" required>
-                        <option value="" disabled selected>Selecciona una opción...</option>
-                        <option value="Landing Page">Landing Page (Página única)</option>
-                        <option value="Tienda Online">Tienda Online (Venta de productos)</option>
-                        <option value="Web Institucional">Web Institucional (Varias páginas)</option>
+                        <option value="" disabled selected>Seleccioná una opción...</option>
+                        <option value="Landing Page">Landing Page (página única de conversión)</option>
+                        <option value="Web Institucional">Web Institucional (varias páginas)</option>
+                        <option value="Tienda Online">Tienda Online (catálogo + ventas)</option>
                         <option value="Sistema a medida">Sistema web a medida</option>
                     </select>
                 </div>
@@ -263,21 +618,23 @@
                 </div>
 
                 <div class="input-group">
-                    <label>Presupuesto estimado</label>
+                    <label>Plan de interés</label>
                     <select id="cliente-presupuesto" required>
-                        <option value="Busco asesoramiento">Busco asesoramiento</option>
-                        <option value="Básico (Funcional y económico)">Básico (Funcional y económico)</option>
-                        <option value="Estándar (Diseño premium)">Estándar (Diseño premium)</option>
-                        <option value="Avanzado (Con funciones complejas)">Avanzado (Con funciones complejas)</option>
+                        <option value="No sé aún, busco asesoramiento">No sé aún, busco asesoramiento</option>
+                        <option value="Plan Starter (~$100 USD)">Plan Starter (~$100 USD)</option>
+                        <option value="Plan Pro (~$250 USD)">Plan Pro (~$250 USD)</option>
+                        <option value="Plan Business (~$500 USD+)">Plan Business (~$500 USD+)</option>
                     </select>
                 </div>
                 
                 <div class="input-group">
-                    <label>Detalles extra (Opcional)</label>
-                    <textarea id="cliente-detalles" rows="2" placeholder="Contame un poco más de tu idea..."></textarea>
+                    <label>Contame más (opcional)</label>
+                    <textarea id="cliente-detalles" rows="3" placeholder="¿Tenés referencia de alguna web que te guste? ¿Algún detalle importante?"></textarea>
                 </div>
                 
-                <button type="submit" class="btn-3d submit-btn"><i class='bx bxl-whatsapp'></i> Enviar por WhatsApp</button>
+                <button type="submit" class="btn-3d submit-btn">
+                    <i class='bx bxl-whatsapp'></i> Enviar por WhatsApp
+                </button>
             </form>
         </div>
     </div>
